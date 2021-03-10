@@ -1,0 +1,53 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+body {
+  margin: 0;
+  font-family: Camphor, -apple-system, BlinkMacSystemFont, Proxima Nova,
+    Segoe UI, Roboto, Oxygen, Fira Sans, Droid Sans, Helvetica Neue, sans-serif;
+  -webkit-font-smoothing: antialiased;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  color: #51626a;
+  background-color: #f8fafc;
+  max-width: 100%;
+}
+
+code {
+  font-family: source-code-pro, Menlo, Monaco, Consolas, "Courier New",
+    monospace;
+}
+
+.bg-green {
+  background-color: #85a92c;
+  background-color: rgba(133, 169, 44, 1);
+}
+
+.user {
+  border-bottom: 2px dotted #337ab7;
+  color: #337ab7;
+}
+
+.prop {
+  font-family: Menlo, Monaco, Consolas, "Courier New", monospace;
+  word-break: break-all;
+}
+
+$primary-color: rgba(53, 53, 53, 0.783);
+@import "loaders.css/src/animations/ball-scale-ripple-multiple.scss";
+
+.loader-hidden {
+  display: none;
+}
+.loader-active {
+  display: block;
+}
+.loader {
+  height: 100%;
+  width: 100%;
+  .loader-inner {
+    margin: 20% 50% 20% 50%;
+    padding: 1px;
+  }
+}
