@@ -116,7 +116,7 @@ export default function Account() {
       <div className="grid md:grid-flow-row gap-1 sm:grid-cols-2 md:grid-cols-4">
         <div className="col-span-1">
           <h1
-            className="font-thin text-black text-5xl m-2 text-blue-800"
+            className="font-light text-3xl m-2 text-blue-900"
             style={{ wordBreak: "break-all" }}
           >
             @{account}
