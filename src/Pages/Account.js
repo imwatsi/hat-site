@@ -15,15 +15,15 @@ export default function Account() {
   } = useContext(AppContext);
   const { account } = useParams();
 
+  const transactions = accountHistory && accountHistory.transactions;
+  const auths = accountProps && accountProps.properties.authorities;
+  const tokens = accountProps && accountProps.token_balances;
+
   useEffect(() => {
     getAccountHistory(account);
     getAccountProps(account);
     // eslint-disable-next-line react-hooks/exhaustive-deps
   }, [account, auths, tokens]);
-
-  const transactions = accountHistory && accountHistory.transactions;
-  const auths = accountProps && accountProps.properties.authorities;
-  const tokens = accountProps && accountProps.token_balances;
 
   const Data = () => {
     return !transactions
