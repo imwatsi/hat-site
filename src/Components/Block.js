@@ -35,7 +35,7 @@ export default function Blocks(props) {
       <div className="p-4">
         {renderType()}
         <p className="text-sm font-light">
-          <TimeAgo datetime={time} live={false} />
+          <TimeAgo datetime={time} live={false} opts={{ minInterval: 120 }} />
         </p>
       </div>
     </div>

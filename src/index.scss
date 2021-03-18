@@ -51,3 +51,15 @@ $primary-color: rgba(53, 53, 53, 0.783);
     padding: 1px;
   }
 }
+
+.searchinput {
+  background-color: #053049;
+  &:focus {
+    background-color: #073c5a;
+    outline: none;
+  }
+}
+
+button:focus {
+  outline: none;
+}
