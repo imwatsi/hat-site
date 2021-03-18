@@ -146,24 +146,24 @@ export const AppProvider = (props) => {
     <AppContext.Provider
       value={{
         blocks,
-        getInfo: getInfo,
-        getBlock: getBlock,
         globalProps,
         blockNum,
-        fixDate: fixDate,
-        setLoading: setLoading,
         convertedDate,
         timestamp,
         loading,
-        getAccountHistory: getAccountHistory,
         accountHistory,
         accountName,
+        accountProps,
+        searchResults,
+        getInfo: getInfo,
+        getBlock: getBlock,
+        fixDate: fixDate,
+        setLoading: setLoading,
+        getAccountHistory: getAccountHistory,
         setName: setName,
         searchBlock: searchBlock,
         searchAccount: searchAccount,
         getAccountProps: getAccountProps,
-        accountProps,
-        searchResults,
       }}
     >
       {props.children}

@@ -10,8 +10,8 @@ export default function Account() {
     loading,
     accountHistory,
     getAccountProps,
-    convertedDate,
     accountProps,
+    fixDate,
   } = useContext(AppContext);
   const { account } = useParams();
 
@@ -23,7 +23,7 @@ export default function Account() {
     getAccountHistory(account);
     getAccountProps(account);
     // eslint-disable-next-line react-hooks/exhaustive-deps
-  }, [account, auths, tokens]);
+  }, [account]);
 
   const Data = () => {
     return !transactions
@@ -35,7 +35,7 @@ export default function Account() {
             type={t.type}
             amount={t.amount}
             currency={"HAT"}
-            time={convertedDate}
+            time={fixDate(t.timestamp)}
             key={t.transaction_id}
           />
         ));
