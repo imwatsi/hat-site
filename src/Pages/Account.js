@@ -19,13 +19,11 @@ export default function Account() {
     getAccountHistory(account);
     getAccountProps(account);
     // eslint-disable-next-line react-hooks/exhaustive-deps
-  }, [account]);
+  }, [account, auths, tokens]);
 
   const transactions = accountHistory && accountHistory.transactions;
   const auths = accountProps && accountProps.properties.authorities;
   const tokens = accountProps && accountProps.token_balances;
-
-  console.log(tokens);
 
   const Data = () => {
     return !transactions
@@ -125,7 +123,7 @@ export default function Account() {
           </h1>
           {loading ? (
             <Loader type="ball-scale-ripple-multiple" />
-          ) : transactions && transactions.length > 0 ? (
+          ) : auths && tokens ? (
             <div className="p-4">
               <Auths />
               <Toks />
