@@ -16,8 +16,8 @@ deploy:
     - pwd
     - npm install
     - CI=false npm run build
-    - pkill -f node || true
-    - npm run start >> hat-site.log 2>&1&
+    - pkill -f serve || true
+    - sudo serve -s build --listen 443 --ssl-cert $SSL_CERT --ssl-key $SSL_KEY 2>&1&
   only:
     - master
   tags:
