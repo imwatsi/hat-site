@@ -133,7 +133,11 @@ export default function Account() {
           )}
         </div>
         <div className="md:col-span-3 sm:col-span-1">
-          <Data />
+          {loading ? (
+            <Data />
+          ) : (
+            <h1 className="p-5">This user has no transactions history.</h1>
+          )}
         </div>
       </div>
     </div>
