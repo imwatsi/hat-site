@@ -20,7 +20,7 @@ deploy:
     - npm install
     - CI=false npm run build
     - pkill -f serve || true
-    - sudo serve -s build --listen 443 --ssl-cert $SSL_CERT --ssl-key $SSL_KEY 2>&1&
+    - sudo serve -s build --listen 443 --ssl-cert $SSL_CERT --ssl-key $SSL_KEY &
   only:
     - ci-test
   tags:
