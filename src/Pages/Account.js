@@ -10,8 +10,8 @@ export default function Account() {
     loading,
     accountHistory,
     getAccountProps,
-    convertedDate,
     accountProps,
+    fixDate,
   } = useContext(AppContext);
   const { account } = useParams();
 
@@ -23,7 +23,7 @@ export default function Account() {
     getAccountHistory(account);
     getAccountProps(account);
     // eslint-disable-next-line react-hooks/exhaustive-deps
-  }, [account, auths, tokens]);
+  }, [account]);
 
   const Data = () => {
     return !transactions
@@ -35,7 +35,7 @@ export default function Account() {
             type={t.type}
             amount={t.amount}
             currency={"HAT"}
-            time={convertedDate}
+            time={fixDate(t.timestamp)}
             key={t.transaction_id}
           />
         ));
@@ -116,7 +116,7 @@ export default function Account() {
       <div className="grid md:grid-flow-row gap-1 sm:grid-cols-2 md:grid-cols-4">
         <div className="col-span-1">
           <h1
-            className="font-thin text-black text-5xl m-2 text-blue-800"
+            className="font-light text-3xl m-2 text-blue-900"
             style={{ wordBreak: "break-all" }}
           >
             @{account}
@@ -133,7 +133,11 @@ export default function Account() {
           )}
         </div>
         <div className="md:col-span-3 sm:col-span-1">
-          <Data />
+          {loading ? (
+            <Data />
+          ) : (
+            <h1 className="p-5">This user has no transactions history.</h1>
+          )}
         </div>
       </div>
     </div>

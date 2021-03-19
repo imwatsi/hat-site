@@ -24,6 +24,7 @@ export default function Search() {
 
   const searchFunction = (event) => {
     event.preventDefault();
+    setDropdown(false);
     if (searchType === "block") {
       searchBlock(parseInt(query));
       history.push({
