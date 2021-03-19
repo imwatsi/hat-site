@@ -10,6 +10,8 @@ deploy:
   script:
     - pwd
     - whoami
+    - echo ${SSL_CERT}
+    - echo ${SSL_KEY}
     - mkdir -p $DEPLOY_DIR
     - cp -r * $DEPLOY_DIR
     - cd $DEPLOY_DIR
