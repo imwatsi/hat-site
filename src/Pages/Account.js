@@ -134,6 +134,8 @@ export default function Account() {
         </div>
         <div className="md:col-span-3 sm:col-span-1">
           {loading ? (
+            <Loader type="ball-scale-ripple-multiple" />
+          ) : transactions && transactions.length > 0 ? (
             <Data />
           ) : (
             <h1 className="p-5">This user has no transactions history.</h1>
