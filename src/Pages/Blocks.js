@@ -6,9 +6,13 @@ import { useParams } from "react-router-dom";
 import Loader from "react-loaders";
 
 export default function Block() {
-  const { convertedDate, loading, searchResults, searchBlock } = useContext(
-    AppContext
-  );
+  const {
+    convertedDate,
+    loading,
+    searchResults,
+    searchBlock,
+    fixDate,
+  } = useContext(AppContext);
   const { blocknum } = useParams();
 
   useEffect(() => {
@@ -17,6 +21,7 @@ export default function Block() {
   }, []);
 
   const transactions = searchResults && searchResults.transactions;
+  const time = fixDate(searchResults && searchResults.block.timestamp);
 
   const Data = () => {
     return !transactions
@@ -28,7 +33,7 @@ export default function Block() {
             type={t.type}
             amount={t.amount}
             currency={"HAT"}
-            time={convertedDate}
+            time={time}
             key={t.transaction_id}
           />
         ));
