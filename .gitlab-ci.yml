@@ -10,6 +10,7 @@ deploy:
   script:
     - pwd
     - whoami
+    - export $(grep -v '^#' /etc/hat-site/config.ini | tr --delete '"' | xargs -d '\n')
     - echo ${SSL_CERT}
     - echo ${SSL_KEY}
     - mkdir -p $DEPLOY_DIR
