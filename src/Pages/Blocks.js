@@ -30,8 +30,10 @@ export default function Block() {
           <Blocks
             from={t.from_account}
             to={t.to_account}
+            owner={t.owner}
             type={t.type}
             amount={t.amount}
+            token={t.token}
             currency={"HAT"}
             time={time}
             key={t.transaction_id}

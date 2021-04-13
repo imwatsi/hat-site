@@ -33,6 +33,8 @@ export default function Account() {
             from={t.from_account}
             to={t.to_account}
             type={t.type}
+            token={t.token}
+            owner={t.owner}
             amount={t.amount}
             currency={"HAT"}
             time={fixDate(t.timestamp)}
