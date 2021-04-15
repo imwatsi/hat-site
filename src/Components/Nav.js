@@ -20,8 +20,8 @@ export default function Navbar() {
                 src="logo.png"
                 alt=""
                 srcSet=""
-                width="10%"
-                height="10%"
+                width="20"
+                height="20"
                 className="mr-3"
               />
               <span className="align-middle m-auto">
