@@ -33,6 +33,8 @@ export default function Account() {
             from={t.from_account}
             to={t.to_account}
             type={t.type}
+            token={t.token}
+            owner={t.owner}
             amount={t.amount}
             currency={"HAT"}
             time={fixDate(t.timestamp)}
@@ -86,7 +88,11 @@ export default function Account() {
         {tokens &&
           tokens.map((t) => (
             <div className="mb-3 p-3" key={t.token}>
-              <h1 className="font-md text-md">{t.token} HAT</h1>
+              {t.token === "AA0000000000" ? (
+                <h1 className="font-md text-md">HAT</h1>
+              ) : (
+                <h1 className="font-md text-md">{t.token}</h1>
+              )}
               <div className="flex justify-between p-1">
                 <span className="font-light text-sm">Liquid</span>
                 <span className="font-light text-sm prop text-yellow-600">
